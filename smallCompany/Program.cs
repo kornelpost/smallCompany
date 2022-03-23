@@ -29,13 +29,13 @@ namespace smallCompany
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<assignmentContext>();
+                    var context = services.GetRequiredService<AssignmentContext>();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred creating the DB.");
+                    logger.LogError(ex, "An error occurred while creating the DB.");
                 }
             }
         }

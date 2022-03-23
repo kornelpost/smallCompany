@@ -7,7 +7,7 @@ namespace smallCompany.Data
 {
     public static class DbInitializer
     {
-        public static void Initialize(assignmentContext context)
+        public static void Initialize(AssignmentContext context)
         {
             context.Database.EnsureCreated();
 

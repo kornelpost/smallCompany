@@ -1,12 +1,16 @@
 ﻿using smallCompany.Models;
 using Microsoft.EntityFrameworkCore;
+
+
 namespace smallCompany.Data
 {
-    public class assignmentContext : DbContext
+    public class AssignmentContext : DbContext
     {
-        public assignmentContext(DbContextOptions<assignmentContext> options) : base(options)
+        public AssignmentContext(DbContextOptions<AssignmentContext> options) : base(options)
         {
         }
+
+
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<Employee> Employees { get; set; }
