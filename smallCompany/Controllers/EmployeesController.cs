@@ -34,7 +34,11 @@ namespace smallCompany.Controllers
             }
 
             var employee = await _context.Employees
+                .Include(e => e.Assignments)
+                    .ThenInclude(t => t.Task)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ID == id);
+
             if (employee == null)
             {
                 return NotFound();
